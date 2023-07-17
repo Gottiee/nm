@@ -41,5 +41,6 @@ You can exploit them in c with the ```struct Elf64_Ehdr``` or ```struct Elf32_Eh
 ### Docu
 
 [man nm](https://linux.die.net/man/1/nm)
+
 [Explanation of ELF](https://www.youtube.com/watch?v=nC1U1LJQL8o)
 
