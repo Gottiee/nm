@@ -1,8 +1,8 @@
 # VARIABLES
 
-NAME		= Colleen
+NAME		= ft_nm
 
-SRC_DIR		= 	./
+SRC_DIR		= 	src/
 OBJ_DIR		= 	obj/
 
 SUBDIR		=	obj/
@@ -16,7 +16,9 @@ SAN			= -fsanitize=address
 
 # SOURCES
 
-SRC_FILES = 	Colleen \
+SRC_FILES = 	ft_nm \
+64_bits\
+32_bits
 
 C_FILES		=	$(addsuffix .c, $(SRC_FILES))
 SRCS		=	$(addprefix $(SRC_DIR), $(C_FILES))
