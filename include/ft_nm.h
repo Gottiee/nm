@@ -11,6 +11,6 @@
 #include <sys/stat.h>
 
 void main_32(char *file, int fd);
-void main_64(Elf64_Ehdr header);
+void main_64(Elf64_Ehdr *header, char *file_data);
 
 #endif

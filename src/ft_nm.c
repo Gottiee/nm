@@ -42,15 +42,12 @@ void choose_bits(int fd, char *file, char *file_data)
 	(void)header;
 	(void)fd;
 	(void)file;
-	// size_t r = read(fd, &header, sizeof(header));
-	// if (r != sizeof(header))
-	// 	print_perror(file, fd, "nm: Warning: '%s'");
-	// if (header.e_ident[EI_CLASS] == ELFCLASS32)
-	// 	main_32(file, fd);
-	// else if (header.e_ident[EI_CLASS] == ELFCLASS64)
-	// 	main_64(header);
-	// else
-	// 	print_error(file, "nm: %s: File format not recognized\n", fd);
+	if (header->e_ident[EI_CLASS] == ELFCLASS32)
+		main_32(file, fd);
+	else if (header->e_ident[EI_CLASS] == ELFCLASS64)
+		main_64(header, file_data);
+	else
+		print_error(file, "nm: %s: File format not recognized\n", fd);
 }
 
 char *check_arg(int argc, char **argv, int *fd)
