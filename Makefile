@@ -18,7 +18,10 @@ SAN			= -fsanitize=address
 
 SRC_FILES = 	ft_nm \
 64_bits\
-32_bits
+32_bits\
+list\
+symbols\
+sort
 
 C_FILES		=	$(addsuffix .c, $(SRC_FILES))
 SRCS		=	$(addprefix $(SRC_DIR), $(C_FILES))
