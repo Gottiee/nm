@@ -6,12 +6,7 @@ t_list *init_64(t_64 *struct_64, Elf64_Ehdr *header, t_list *list)
 	struct_64->string_section_header = NULL;
 	struct_64->symbol_section_header = NULL;
 	struct_64->symbols = NULL;
-	list = malloc(sizeof(t_list));
-	list->address = 0;
-	list->type = 0;
-	list->name = NULL;
-	list->next = NULL;
-	list->id = 0;
+	list = init_list(list);
 	return list;
 }
 
@@ -48,6 +43,7 @@ void main_64(Elf64_Ehdr *header, t_data *data)
 
 	list = init_64(&struct_64, header, list);
 	fill_struct_64(&struct_64, header, data);
-	fill_list(&struct_64, data, list);
-	// free la list et munmup a la fin
+	list = fill_list(&struct_64, data, list);
+	print_list(list);
+	free_all(list);
 }

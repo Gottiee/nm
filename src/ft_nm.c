@@ -101,4 +101,5 @@ int main(int argc, char **argv)
 	data.file_data = mmap_file(&data);
 	choose_bits(&data);
 	close(data.fd);
+	munmap(data.file_data, data.size_mmap);
 }

@@ -43,7 +43,9 @@ void print_error(char *err, char *file_name, t_data *data);
 void print_perror(char *string, char *cmd, t_data *data);
 
 /* list*/
-void fill_list(t_64 *struct_64, t_data *data, t_list *list);
+t_list *fill_list(t_64 *struct_64, t_data *data, t_list *list);
+t_list *init_list(t_list *list);
+void free_all(t_list *list);
 
 /* symbols*/
 bool pars_symbol(Elf64_Sym sym);
@@ -51,6 +53,6 @@ long getAdressSym(void);
 char getTypeSym(void);
 char *getNameSym(t_data *data, t_64 *struct_64, Elf64_Sym sym);
 
-/* sort*/
-void sort_list(t_list *list);
+/* print*/
+void print_list(t_list *list);
 #endif
